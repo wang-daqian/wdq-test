@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "code": "ru",
+    "name": "儒"
+  },
+  {
+    "id": 2,
+    "code": "dao",
+    "name": "道"
+  },
+  {
+    "id": 3,
+    "code": "mo",
+    "name": "墨"
+  },
+  {
+    "id": 4,
+    "code": "fa",
+    "name": "法"
+  },
+  {
+    "id": 5,
+    "code": "bing",
+    "name": "兵"
+  },
+  {
+    "id": 6,
+    "code": "ming",
+    "name": "名"
+  },
+  {
+    "id": 7,
+    "code": "yinyang",
+    "name": "阴阳"
+  },
+  {
+    "id": 8,
+    "code": "zongheng",
+    "name": "纵横"
+  },
+  {
+    "id": 9,
+    "code": "za",
+    "name": "杂"
+  },
+  {
+    "id": 10,
+    "code": "nong",
+    "name": "农"
+  },
+  {
+    "id": 11,
+    "code": "xiaoshuo",
+    "name": "小说"
+  },
+  {
+    "id": 12,
+    "code": "fangji",
+    "name": "方计"
+  }
+]
