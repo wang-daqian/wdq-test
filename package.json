@@ -1,0 +1,22 @@
+{
+  "name": "vue3-test",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wang-daqian/wdq-test.git"
+  },
+  "author": "WangDaqian",
+  "bugs": {
+    "url": "https://github.com/wang-daqian/wdq-test/issues"
+  },
+  "homepage": "https://github.com/wang-daqian/wdq-test#readme",
+  "dependencies": {
+    "vue": "^3.2.20"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.20"
+  }
+}
