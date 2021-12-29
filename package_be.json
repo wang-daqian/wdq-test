@@ -2,9 +2,9 @@
   "name": "travelai",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --mode development",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build:client": "vue-cli-service build --dest dist/client",
+    "build:server": "SSR=1 vue-cli-service build --dest dist/server",
+    "build": "npm run build:client && npm run build:server",
   },
   "dependencies": {
     "@vue/server-renderer": "^3.2.26",
