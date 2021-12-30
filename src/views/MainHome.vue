@@ -3,8 +3,10 @@ import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { useHead } from '@vueuse/head'
 const store = useStore()
-store.dispatch('contracts/fetchContract')
-
+const asyncData = ({ store }) => {
+  return store.dispatch('contracts/fetchContract')
+}
+asyncData({ store })
 const contract = computed(() => store.state.contracts.contract)
 
 useHead({
@@ -17,8 +19,7 @@ const count = ref(0)
 <template>
   <p>
     BaseLink Test:
-    <BaseLink to="https://code.visualstudio.com/">VSCode</BaseLink>
-    +
+    <BaseLink to="https://code.visualstudio.com/">VSCode</BaseLink>+
     <BaseLink to="/volar">Volar</BaseLink>
   </p>
   {{ contract }}

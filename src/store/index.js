@@ -1,4 +1,4 @@
-import { createStore } from "vuex";
+import { createStore as _createStore } from "vuex"
 import { applyMixin } from './storeMixin'
 
 const requireModules = import.meta.globEager("./modules/*.js")
@@ -8,14 +8,16 @@ for (let i in requireModules) {
   modules[moduleName] = requireModules[i].default
 }
 
-export default createStore(applyMixin({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  getters: {
-  },
-  modules
-}));
+export default function createStore () {
+  return _createStore(applyMixin({
+    state: {
+    },
+    mutations: {
+    },
+    actions: {
+    },
+    getters: {
+    },
+    modules
+  }))
+}
