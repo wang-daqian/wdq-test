@@ -23,3 +23,18 @@ app.use(store)
 componentRegister(app)
 
 app.mount("#app")
+
+import { createSSRApp } from 'vue'
+import createStore from './store'
+import createRouter from "./router"
+import { createHead } from '@vueuse/head'
+
+export function createApp () {
+  const app = createSSRApp(App)
+  const store = createStore()
+  const router = createRouter()
+  const head = createHead()
+  app.use(router).use(store).use(head)
+
+  return { app, router, store }
+}

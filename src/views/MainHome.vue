@@ -7,7 +7,7 @@ const asyncData = ({ store }) => {
   return store.dispatch('contracts/fetchContract')
 }
 asyncData({ store })
-const contract = computed(() => store.state.contracts.contract)
+const contract = computed(() => store.state.contracts && store.state.contracts.contract)
 
 useHead({
   title: computed(() => contract.value && contract.value.contractName)

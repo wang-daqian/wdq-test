@@ -58,3 +58,7 @@ router.beforeResolve((to, from, next) => {
 router.isReady().then(() => {
   app.mount('#app', true)
 })
+
+if (window.__INITIAL_STATE__) {
+  store.replaceState(window.__INITIAL_STATE__)
+}

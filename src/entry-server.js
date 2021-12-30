@@ -46,5 +46,6 @@ export async function render (url, manifest) {
 
   const context = {}
   const appHtml = await renderToString(app, context)
-  return { appHtml }
+  const state = store.state
+  return { appHtml, state }
 }

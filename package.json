@@ -5,8 +5,8 @@
     "dev": "node server-env.js",
     "build:client": "vite build --outDir dist/client --ssrManifest",
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.js ",
-    "build": "npm build:client && npm build:server",
-    "preview": "npm build && node server.js"
+    "build": "npm run build:client && npm run build:server",
+    "preview": "npm run build && node server.js"
   },
   "dependencies": {
     "@vue/server-renderer": "^3.2.26",
