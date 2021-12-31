@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory, createMemoryHistory } from "vue-router"
+import { createRouter as _createRouter, createWebHistory, createMemoryHistory } from "vue-router"
 import routes from './routes'
 
-export default function () {
+export function createRouter () {
   const routerHistory = import.meta.env.SSR === false ? createWebHistory() : createMemoryHistory()
 
-  return createRouter({
+  return _createRouter({
     history: routerHistory,
     routes,
   })

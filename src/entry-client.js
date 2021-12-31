@@ -1,18 +1,6 @@
-import { createSSRApp } from 'vue'
-import App from './App.vue'
+import { createApp } from './main'
 
-import createStore from './store'
-import createRouter from "./router"
-import { createHead } from '@vueuse/head'
-import componentRegister from './utils/componentRegister'
-
-const store = createStore()
-const router = createRouter()
-const head = createHead()
-
-const app = createSSRApp(App)
-app.use(router).use(store).use(head)
-componentRegister(app)
+const { app, router, store } = createApp()
 
 router.beforeResolve((to, from, next) => {
   let diffed = false
@@ -56,7 +44,7 @@ router.beforeResolve((to, from, next) => {
 })
 
 router.isReady().then(() => {
-  app.mount('#app', true)
+  app.mount('#app')
 })
 
 if (window.__INITIAL_STATE__) {

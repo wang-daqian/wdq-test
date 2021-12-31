@@ -1,4 +1,8 @@
 <script setup>
+import { useHead } from '@vueuse/head'
+useHead({
+  title: 'Vite App'
+})
 </script>
 
 <template>

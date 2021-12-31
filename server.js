@@ -1,31 +1,85 @@
 const fs = require('fs')
 const path = require('path')
-const Koa = require('koa')
-const staticPath = require('koa-static')
+const express = require('express')
 
-const app = new Koa()
-const resolve = (p) => path.resolve(__dirname, p)
+const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 
-const template = fs.readFileSync(resolve('./dist/client/index.html'), 'utf-8')
-const manifest = require('./dist/client/ssr-manifest.json')
-const render = require('./dist/server/entry-server.js').render
+async function createServer (
+  root = process.cwd(),
+  isProd = process.env.NODE_ENV === 'production'
+) {
+  const resolve = (p) => path.resolve(__dirname, p)
 
-app.use(staticPath(resolve('./dist/client'), { index: false }))
+  const indexProd = isProd ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8') : ''
 
-app.use(async (ctx, next) => {
-  const url = ctx.req.url
-  try {
-    const { appHtml, state } = await render(url, manifest)
+  const manifest = isProd ? require('./dist/client/ssr-manifest.json') : {}
 
-    let html = template.replace('<!-- ssr-outlet -->', appHtml).replace(`''`, JSON.stringify(state))
+  const app = express()
 
-    ctx.body = html
-  } catch (error) {
-    console.log(error)
-    next()
+  let vite
+  if (!isProd) {
+    vite = await require('vite').createServer({
+      root,
+      logLevel: isTest ? 'error' : 'info',
+      server: {
+        middlewareMode: 'ssr',
+        watch: {
+          usePolling: true,
+          interval: 100
+        }
+      }
+    })
+
+    app.use(vite.middlewares)
+  } else {
+    app.use(require('compression')())
+    app.use(
+      require('serve-static')(resolve('dist/client'), {
+        index: false
+      })
+    )
   }
-})
 
-app.listen(3000, () => {
-  console.log('http://localhost:3000')
-})
+  app.use('*', async (req, res) => {
+    try {
+      const url = req.originalUrl
+
+      let template, render
+      if (!isProd) {
+        template = fs.readFileSync(resolve('index.html'), 'utf-8')
+        template = await vite.transformIndexHtml(url, template)
+        render = (await vite.ssrLoadModule('/src/entry-server.js')).render
+      } else {
+        template = indexProd
+        render = require('./dist/server/entry-server.js').render
+      }
+
+      const [appHtml, preloadLinks, state, headTags] = await render(url, manifest)
+
+      const html = template
+        .replace(`<!--preload-links-->`, preloadLinks)
+        .replace(`<!--app-html-->`, appHtml)
+        .replace(`<!--head-tags-->`, headTags)
+        .replace(`'<!-- vuex-state -->'`, JSON.stringify(state))
+
+      res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
+    } catch (e) {
+      vite && vite.ssrFixStacktrace(e)
+      console.log(e.stack)
+      res.status(500).end(e.stack)
+    }
+  })
+
+  return { app, vite }
+}
+
+if (!isTest) {
+  createServer().then(({ app }) =>
+    app.listen(3000, () => {
+      console.log('http://localhost:3000')
+    })
+  )
+}
+
+// for test use
+exports.createServer = createServer

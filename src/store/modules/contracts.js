@@ -15,14 +15,18 @@ export default {
   namespaced: true,
   mixins: [apiStore],
   state: {
+    contract: null
   },
   actions: {
     fetchContract ({ dispatch }) {
-      return dispatch('_getContract', { params: { contractId: '114902a6-28df-4722-b2fc-e52fda6a1c28' } })
+      dispatch('_getContract', { params: { contractId: '114902a6-28df-4722-b2fc-e52fda6a1c28' } })
     }
   },
   mutations: {
   },
   getters: {
+    contractName (state) {
+      return state.contract && state.contract.contractName
+    }
   },
 }

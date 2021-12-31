@@ -8,7 +8,7 @@ for (let i in requireModules) {
   modules[moduleName] = requireModules[i].default
 }
 
-export default function createStore () {
+export function createStore () {
   return _createStore(applyMixin({
     state: {
     },
