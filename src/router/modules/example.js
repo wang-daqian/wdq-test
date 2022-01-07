@@ -14,7 +14,7 @@ export default () => {
         component: ExampleList
       },
       {
-        path: 'item/:id',
+        path: 'item/:id(\\d+)',
         name: 'ExampleItem',
         component: ExampleItem
       },

@@ -11,6 +11,10 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 @import "@/assets/css/import.css";
+
+a {
+  color: #42b983;
+}
 </style>

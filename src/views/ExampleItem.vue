@@ -1,22 +1,30 @@
 <script setup>
 import HelloWorld from '@/components/HelloWorld.vue'
 
-import { useRoute } from 'vue-router'
-const route = useRoute()
+import { computed } from 'vue'
 
-const itemId = route.params.id
+import { useRoute } from 'vue-router'
+import { useStore } from 'vuex'
+
+const store = useStore()
+const route = useRoute()
+const itemId = parseInt(route.params.id)
+
+const getItemById = store.getters['example/getItemById']
+
+const itemInfo = computed(() => getItemById(itemId))
 </script>
 
 <template>
   <div>
-    <h1 class="red">Item {{ itemId }}</h1>
+    <h1 class="red">Item {{ itemInfo.id }} : {{ itemInfo.name }}</h1>
     <p>
       <BaseLink to="/">Go to Home</BaseLink>
       <br />
       <BaseLink to="/example/list">Go to List</BaseLink>
     </p>
     <br />
-    <HelloWorld :msg="`From Item ${itemId}`" />
+    <HelloWorld :msg="`From Item ${itemInfo.name}`" />
   </div>
 </template>
 
