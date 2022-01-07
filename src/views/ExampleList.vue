@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
@@ -19,18 +19,18 @@ const addItem = () => {
   }
 }
 
-const delItem = (id) => { store.commit('example/DEL_ITEM', id) }
+const delItem = (id: number) => { store.commit('example/DEL_ITEM', id) }
 </script>
 
 <template>
   <div>
     <h1 class="red">List</h1>
     <p>
-      <BaseLink to="/">Go to Home</BaseLink>
+      <BaseLink :to="{ name: 'MainHome' }">Go to Home</BaseLink>
       <br />
 
       <template v-for="item in list" :key="`all_item_${item.id}`">
-        <BaseLink :to="`/example/item/${item.id}`">Go to Item {{ item.name }}</BaseLink>
+        <BaseLink :to="{ name: 'ExampleItem', params: { id: item.id } }">Go to Item {{ item.name }}</BaseLink>
         <button type="button" @click.prevent="delItem(item.id)">Del Item</button>
         <br />
       </template>

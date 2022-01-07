@@ -1,5 +1,20 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { RouteLocationRaw } from 'vue-router'
+const props = defineProps<{
+  to: RouteLocationRaw
+  activeClass?: string
+  inactiveClass?: string
+}>()
+
+const isExternalLink = computed(
+  () => typeof props.to === 'string' && props.to.startsWith('http')
+)
+
+const externalHref = isExternalLink.value ? props.to as string : ''
+</script>
 <template>
-  <a v-if="isExternalLink" v-bind="$attrs" :href="to" target="_blank">
+  <a v-if="isExternalLink" v-bind="$attrs" :href="externalHref" target="_blank">
     <slot />
   </a>
   <router-link v-else v-bind="$props" custom v-slot="{ isActive, href, navigate }">
@@ -13,21 +28,3 @@
     </a>
   </router-link>
 </template>
-<script>
-import { RouterLink } from 'vue-router'
-
-export default {
-  name: 'BaseLink',
-
-  props: {
-    ...RouterLink.props,
-    inactiveClass: String,
-  },
-
-  computed: {
-    isExternalLink () {
-      return typeof this.to === 'string' && this.to.startsWith('http')
-    },
-  },
-}
-</script>

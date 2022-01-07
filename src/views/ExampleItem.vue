@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
 
 import { computed } from 'vue'
@@ -8,7 +8,7 @@ import { useStore } from 'vuex'
 
 const store = useStore()
 const route = useRoute()
-const itemId = parseInt(route.params.id)
+const itemId = parseInt(route.params.id as string)
 
 const getItemById = store.getters['example/getItemById']
 
