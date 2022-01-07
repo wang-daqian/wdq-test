@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "build": "npm run tsc && vite build",
+    "serve": "vite preview",
+    "tsc": "vue-tsc --noEmit"
   },
   "dependencies": {
     "vue": "^3.2.25",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "typescript": "^4.5.4",
-    "vite": "^2.7.2"
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.30.2"
   }
 }

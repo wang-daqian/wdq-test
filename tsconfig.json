@@ -5,10 +5,16 @@
     "strict": true,
     "jsx": "preserve",
     "moduleResolution": "Node",
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": [
+        "./src/*"
+      ],
     },
+    "baseUrl": "./",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
