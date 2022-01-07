@@ -13,11 +13,15 @@ const itemId = parseInt(route.params.id as string)
 const getItemById = store.getters['example/getItemById']
 
 const itemInfo = computed(() => getItemById(itemId))
+
+store.dispatch('example/fetchTest', itemInfo.value)
 </script>
 
 <template>
   <div>
     <h1 class="red">Item {{ itemInfo.id }} : {{ itemInfo.name }}</h1>
+    <h1 class="red">Item contractName : {{ itemInfo.contractName }}</h1>
+    <h1 class="red">Item requestName : {{ itemInfo.requestName }}</h1>
     <p>
       <BaseLink to="/">Go to Home</BaseLink>
       <br />

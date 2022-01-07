@@ -4,4 +4,7 @@ export interface ExampleState {
 export interface ExampleItem {
     id: number;
     name: string;
+    contractId?: string;
+    contractName?: string;
+    requestName?: string;
 }
