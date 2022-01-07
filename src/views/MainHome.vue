@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
+import { useHead } from '@vueuse/head'
+useHead({ title: 'Main Home' })
 </script>
 
 <template>

@@ -2,6 +2,9 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
+import { useHead } from '@vueuse/head'
+
+useHead({ title: 'Example List' })
 
 const store = useStore()
 

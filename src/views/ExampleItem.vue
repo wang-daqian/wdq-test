@@ -5,6 +5,7 @@ import { computed } from 'vue'
 
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
+import { useHead } from '@vueuse/head'
 
 const store = useStore()
 const route = useRoute()
@@ -15,6 +16,15 @@ const getItemById = store.getters['example/getItemById']
 const itemInfo = computed(() => getItemById(itemId))
 
 store.dispatch('example/fetchTest', itemInfo.value)
+
+const title = computed(() => {
+  if (itemInfo.value && itemInfo.value.contractName) {
+    return 'Item: ' + itemInfo.value.contractName
+  } else {
+    return 'No Contract Name Item'
+  }
+})
+useHead({ title })
 </script>
 
 <template>

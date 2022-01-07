@@ -8,6 +8,7 @@
     "tsc": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@vueuse/head": "^0.7.4",
     "axios": "^0.24.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",
