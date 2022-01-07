@@ -1,18 +1,23 @@
-import { createApp } from 'vue'
 import App from './App.vue'
-import router from "./router"
-import store from "./store"
+import { createSSRApp } from 'vue'
+import { createRouter } from "./router"
+import { createStore } from "./store"
 import { createHead } from '@vueuse/head'
 
-const head = createHead()
+export function createApp() {
+  const app = createSSRApp(App)
+  const store = createStore()
+  const router = createRouter()
+  const head = createHead()
 
-const app = createApp(App).use(router).use(store).use(head)
+  app.use(router).use(store).use(head)
 
-const requireComponents = import.meta.globEager("/src/components/common/Base*.vue")
-for (let i in requireComponents) {
-  const component = requireComponents[i].default || requireComponents[i]
-  const componentName = i.split("/")[i.split("/").length - 1].replace(".vue", "")
-  app.component(componentName, component)
+  const requireComponents = import.meta.globEager("/src/components/common/Base*.vue")
+  for (let i in requireComponents) {
+    const component = requireComponents[i].default || requireComponents[i]
+    const componentName = i.split("/")[i.split("/").length - 1].replace(".vue", "")
+    app.component(componentName, component)
+  }
+
+  return { app, router, head }
 }
-
-app.mount('#app')

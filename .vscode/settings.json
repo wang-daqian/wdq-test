@@ -9,7 +9,7 @@
   // GitLens
   "git.confirmSync": false,
   // vscode-icons
-  // "vsicons.presets.tsOfficial": true,
+  "vsicons.presets.tsOfficial": true,
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.iconTheme": "vscode-icons",
   // ENV
