@@ -1,4 +1,5 @@
-export interface ExampleState {
+import { BaseState } from '@/types'
+export interface ExampleState extends BaseState {
     list: ExampleItem[];
 }
 export interface ExampleItem {

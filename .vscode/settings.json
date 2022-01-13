@@ -5,6 +5,7 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "window.zoomLevel": 2,
+  "editor.tabSize": 2,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // GitLens
   "git.confirmSync": false,
