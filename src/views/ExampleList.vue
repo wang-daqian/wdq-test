@@ -9,16 +9,25 @@ useHead({ title: 'Example List' })
 const store = useStore()
 
 const list = computed(() => store.state.example.list)
+const contract = computed(() => store.state.example.contract)
 const oddList = computed(() => store.getters['example/getOddList'])
 const evenList = computed(() => store.getters['example/getEvenList'])
 
 const newItemName = ref('')
+const contractId = ref('')
 
 const addItem = () => {
   if (newItemName.value === '') {
     alert('Please input Item Name.')
   } else {
     store.commit('example/ADD_ITEM', newItemName.value)
+  }
+}
+const search = () => {
+  if (contractId.value === '') {
+    alert('Please input Contract Id.')
+  } else {
+    store.dispatch('example/fetchContractById', contractId.value)
   }
 }
 
@@ -44,6 +53,15 @@ const delItem = (id: number) => { store.commit('example/DEL_ITEM', id) }
       <input type="text" v-model="newItemName" />
       <br />
       <button type="button" @click.prevent="addItem">Add Item</button>
+    </div>
+    <div class="red_border">
+      Contract Id:
+      <input type="text" v-model="contractId" />
+      <br />
+      <button type="button" @click.prevent="search">Search Contract By Id</button>
+      <br />
+      {{ contract }}
+      <br />
     </div>
     <br />
     <h1 class="red">Odd Number List</h1>
