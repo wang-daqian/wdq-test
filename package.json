@@ -8,9 +8,12 @@
     "tsc": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^4.0.5",
     "@vueuse/head": "^0.7.4",
     "axios": "^0.24.0",
+    "default-passive-events": "^2.0.0",
     "qs": "^6.10.2",
+    "tinymce": "^5.10.2",
     "url-template": "^2.0.8",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",

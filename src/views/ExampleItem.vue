@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import TinymceEditor from '@/components/common/TinymceEditor.vue'
 
 import { computed } from 'vue'
 
@@ -38,7 +38,7 @@ useHead({ title })
       <BaseLink to="/example/list">Go to List</BaseLink>
     </p>
     <br />
-    <HelloWorld :msg="`From Item ${itemInfo.name}`" />
+    <TinymceEditor />
   </div>
 </template>
 
