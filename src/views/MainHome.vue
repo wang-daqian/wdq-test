@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import TuiEditor from '@/components/common/TuiEditor.vue'
 import { useHead } from '@vueuse/head'
 useHead({ title: 'Main Home' })
 </script>
@@ -15,7 +15,7 @@ useHead({ title: 'Main Home' })
       <BaseLink to="/error">Go to 404</BaseLink>
     </p>
     <br />
-    <HelloWorld msg="From Main" />
+    <TuiEditor />
   </div>
 </template>
 
