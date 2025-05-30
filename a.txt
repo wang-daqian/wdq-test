@@ -1,0 +1,405 @@
+2018下半年主要成果
+2018/8 ~ 至今
+
+FirstApperal
+  QA对应
+  式样变更对应
+  open后维护对应
+PingdaMall
+  维护对应
+Buywow
+  维护对应
+PaycoBizMall
+  renewal版开发QA对应
+    退货/取消相关功能重构
+    购物优惠券选择相关功能重构
+    商品详细显示布局相关功能重构
+    其他QA对应
+CreasMall
+  开发
+    MO
+      基础架构
+      页头、页尾
+      首页
+    PC
+      基础架构
+      页头、页尾
+      MainHome
+      品牌首页
+      Event
+      Best
+      分类一览页面
+NCP-China
+  会议学习
+
+
+  2019上半年主要成果
+2018/12 ~ 至今
+
+PaycoMall
+  维护对应
+FirstApperal
+  维护对应
+PaycoPlusShop
+  维护对应
+PaycoBizMall
+  item view pop 调整
+  QA对应
+  维护对应
+CreasMall
+  开发
+    MO,PC拆分
+    PC
+      MainHome
+      BrandHome
+      Search List
+      Header Search
+      PowerReview
+      PowerReviewPhoto
+    MO
+      Header
+      Main Home
+      Footer
+      Main Pop
+      Cart
+      1:1
+      Best
+      MD 추천
+      BestReview
+      PowerReview
+      PowerReviewPhoto
+      Order Sheet
+      MugenScroll 对应
+      Swiper 相关对应
+  QA对应
+LineFriends
+  环境构筑
+  项目准备
+
+
+  2019下半年主要成果
+2019/06 ~ 至今
+
+FirstApperal
+  malls 及 categories 内容保存方式变更
+  维护对应
+PaycoPlusShop
+  malls 及 categories 内容保存方式变更
+  维护对应
+PaycoBizMall
+  malls 及 categories 内容保存方式变更
+  维护对应
+LineFriends KR
+  QA对应
+  open
+  open后维护对应
+LineFriends JP
+  环境构筑
+  开发
+    Cart
+    OrderDetail
+    Cancel
+  QA对应
+AfterLife
+  开发
+    미션완료
+    스토리
+    드랍이벤트
+    미션완료
+    포인트이벤트
+VIP Mall
+  开发
+    header & footer
+    메뉴 레이어
+
+
+    2020上半年主要成果
+2019/12 ~ 至今
+
+PaycoBizMall
+  维护对应
+LineFriends JP
+  QA对应
+  OPEN
+  维护对应
+VIP Mall
+  维护对应
+NCP Admin
+  开发
+    共通组件
+    优惠券相关部分画面
+    结算状态查询页面
+    弹窗查询，添加画面
+  QA对应
+
+
+  2020下半年主要成果
+2020/6 ~ 至今
+
+NCP Admin
+  开发
+    共通组件
+    SA
+      내 계정관리
+      설정
+      회원 조회
+      회원등급 관리
+      회원그룹 관리
+      휴면회원 조회
+      탈퇴회원 조회
+      적립금 지급/차감
+      회원등급 변경
+      회원그룹 변경
+      회원등급평가설정
+      할인쿠폰 지급
+      입점 계약등록
+      파트너 신규 등록
+      파트너 검색/등록
+      파트너 복사등록
+      할인쿠폰 관리
+      할인쿠폰 등록/조회/수정/상태변경
+      상품재고관리
+      조정재고 일괄변경
+      수정재고 일괄변경
+      엑셀 일괄등록
+      상품평 관리
+      상품평 상세정보
+      상품평 관리
+      상품평 신고 상세정보
+      팝업 관리
+      팝업 등록/수정
+      매출 내역 조회
+      정산 현황 조회
+    BPC
+      내 계정관리
+      설정
+      매출 내역 조회
+      정산 현황 조회
+      상품재고관리
+      조정재고 일괄변경
+      수정재고 일괄변경
+      엑셀 일괄등록
+      상품평 관리
+      상품평 상세정보
+      상품평 관리
+      상품평 신고 상세정보
+  QA对应
+
+
+  2021上半年主要成果
+2020/12 ~ 至今
+
+NCP Admin
+  QA对应
+  Open对应
+shop-by-pro
+  开发
+    쿠폰 관리
+    쿠폰 등록
+    쿠폰 수정
+    쿠폰 등록
+    쿠폰 발급/사용 현황
+    쿠폰 코드 관리
+  QA对应
+  Open对应
+SLAM통합
+  관리자 목록
+  마이그레이션 목록
+  완결함
+  참조 완결함
+  진행중
+  담당자별 전체목록
+  권한이관
+  관리자 목록 (TL)
+  관리자 목록 (BM)
+
+
+  2021下半年主要成果
+2021/06 ~ 至今
+
+SLAM통합
+  공문 관리
+    수/발신문서
+    임시저장
+  업무의뢰
+    요청상태 status append
+    조치일정등록
+    이행점검완료
+전자서명
+  SLAM
+    相关项追加
+  esign-be API
+    authorize
+    users
+    real-seal
+    mandates
+  esign-fe
+    기본정보확인
+    동의서 확인
+    실물날인 요청
+
+
+    2022上半年主要成果
+2021/12 ~ 至今
+
+SLAM-Esign
+  追加功能对应
+  QA对应
+YPBooks
+  项目前期准备
+    FE端框架搭建
+      web-admin:vue3+vite+typescript
+    服务器环境构建
+      docker方式安装Gitlab Runner
+      gitlab CI/CD 构筑代码提交自动部署
+  项目开发
+    共通部分
+      MessageBox
+      Header
+      Footer
+      TitleBar
+      Menu
+      DatePicker
+      RangePicker
+      From
+      FromItem
+      Table
+      TableItem
+      Markdown
+    页面开发
+      로그인
+      로그아웃
+      비밀번호 찾기
+      중복로그인
+      운영자 등록 신청
+      운영자 정보 수정
+      비밀번호 유효기간 경과
+      마스터 운영자 등록
+      운영자 권한 설정
+      관리그룹 설정
+      IP 관리
+      운영자 정보 수정(운영회원)
+
+
+      2022下半年主要成果
+2022/6 ~ 至今
+
+YPBooks 页面开发
+  front_admin
+    어드민 네비게이션 ( 웹 세션 연결 ) 
+    운영자 정보 수정(운영회원)
+    운영자 공지 사항
+    회원정보 관리
+    적립금/예치금 조회
+    예치금 관리
+    eMoney 관리
+    회원정보 관리 m
+    기가입자 인증정보
+    적립금 이관
+    휴면/탈퇴 회원
+    승인대기 목록
+    기업회원 관리
+    소속회원 관리
+    소속회원 관리 m
+    메인화면 전시
+    분야별 메인화면 전시
+    오늘의 책
+    화제의 신간
+    요즘 뜨는 책
+    화제의 도서
+    MD 추천
+    MD 테마
+    사용자 공개서재
+    추천 테마
+  front_web
+    로그인
+    로그아웃
+    비밀번호 찾기 (재설정 )
+    아이디찾기
+    중복 로그인 처리
+    간편로그인 - 네이버
+    휴면처리 및 해제
+    차단계정 처리
+    개인회원 가입
+    주요약관
+    기업회원 가입신청
+    기업확인
+    오늘의 책
+    내계좌 : 교환권/쿠폰
+    내 정보관리 : 회원정보 관리
+    내 정보관리 : 프로필 관리
+    내 정보관리 : 비밀번호 변경
+    내 정보관리 : 회원 탈퇴
+    내 정보관리 : 환불계좌 관리
+    기업 소속회원 전환 신청
+    기업회원 마이홈
+    기업 소속회원 관리
+    개인회원 전환
+    기업 마스터회원 탈퇴
+    홈화면 상품 전시
+    바로가기 메뉴 설정
+    메인 프로모션 배너
+    광고 - 배너
+    광고 - 검색창/스카이
+    공통 인터렉션
+
+
+    2023上半年主要成果
+2022/12 ~ 至今
+
+YPBooks
+  项目开发
+  QA对应
+LineFriends
+  QA对应
+  业务变更对应
+
+
+  2023下半年主要成果
+2023/6 ~ 至今
+
+KDKD
+  backend API部分开发
+  backoffice 管理页面开发
+  web 用户端页面开发
+RogueEgg
+  Coupon兑换页面开发
+LineFriends
+  QA对应
+  业务变更对应
+YPBooks
+  项目开发
+  QA对应
+
+
+  2024上半年主要成果
+2023/12 ~ 至今
+
+KDKD
+    Coupon中COIN相关功能追加
+    DIGITAL类型商品相关功能开发
+    个人信息收集定期Mail法总功能开发
+    Coin过期删除相关功能开发
+    Coin履历相关功能开发
+    Coin充值取消功能开发
+    Promotion功能开发
+    视频/图片加水印相关功能开发
+    NewCollection开发
+
+
+    2024下半年主要成果
+2024/06 ~ 至今
+
+KDKD
+    NewCollection开发
+    Popup模式修改
+    支付页面修改为单独页
+    Ticket相关功能开发
+    稀有Key"R"标识开发
+    [Boo Edition 이벤트] 特殊弹窗对应
+    注册流程变更
+    Market相关功能开发
+    CabinetList修改
+    Event相关功能开发
+    分享页面修改
+    Monthly活动开发
